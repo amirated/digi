@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import NumberFormat from 'react-number-format';
 
+import aadhar_logo from '../images/aadhar_logo.png';
+
 class Modal extends Component {
 	constructor(props) {
 	    super(props);
@@ -71,12 +73,19 @@ class Modal extends Component {
 		return (
 			<div className="modal-container">
 				<div className="modal-body">
-					Register Aadhar
-							<NumberFormat format="############" onChange={(event) => this.aadharInput(event)}/>
-							<NumberFormat format="######" onChange={(event) => this.otpInput(event)} />
-							
-					<div onClick={this.props.updateState} className={(this.state.aadharVerified && this.state.otpVerified) ? "verify active" : "verify inactive"} >
+					<b>Register Aadhar</b>
+					<hr/>
+					<img src={aadhar_logo}/>
+					<NumberFormat format="############" onChange={(event) => this.aadharInput(event)}/>
+					<div className={(this.state.aadharVerified) ? "a_verify active" : "a_verify inactive"} >
 						Verify
+					</div>
+					<br/>
+					<br/>
+					<NumberFormat format="######" onChange={(event) => this.otpInput(event)} />
+					
+					<div onClick={this.props.updateState} className={(this.state.aadharVerified && this.state.otpVerified) ? "verify active" : "verify inactive"} >
+						SUBMIT
 					</div>
 				</div>
 			</div>
