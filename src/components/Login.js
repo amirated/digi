@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 // import Form from './Form.js';
 
 import logo from '../images/generic-logo-hi.png';
+import digio_logo from '../images/digio_logo.jpg';
 
 class Login extends Component {
 	constructor(props) {
@@ -83,6 +84,13 @@ class Login extends Component {
 						</div>
 					</form>
 					
+				</div>
+				<hr/>
+				<div className="footer">
+					<img src={digio_logo}/>
+					<span>
+						Powered by<br/><a href="www.digio.in">www.digio.in</a>
+					</span>
 				</div>
 			</div>
 		)
