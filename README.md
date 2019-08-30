@@ -15,5 +15,4 @@ The testing framework used is Jest: https://jestjs.io/
 
 Bundling is done using webpack: https://webpack.js.org
 
-Antd library has been used for the design: https://ant.design/docs/react/introduce
 
