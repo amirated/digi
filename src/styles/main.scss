@@ -70,10 +70,13 @@ body {
 	background-color: rgba(0,0,0,0.4);
 	text-align: center;
 	.modal-body {
+		margin: 5px auto;
 		width: 500px;
 		height: 200px;
 		background: white;
 		.verify {
+			position: absolute;
+			bottom: 20px;
 			width: 120px;
 			height: 50px;
 			background: orange;
