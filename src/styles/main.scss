@@ -34,6 +34,17 @@ body {
 		}
 	}
 
+	.google {
+		margin: 5%;
+		button {
+			margin: 5% 0;
+			color: white;
+			padding: 1%;
+			border-radius: 10px;
+			background: #DD4B39;
+		}
+	}
+
 	.login-form {
 		padding: 0 5%;
 		form {

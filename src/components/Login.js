@@ -63,6 +63,13 @@ class Login extends Component {
 						<img src={logo} />
 					</div>
 				</div>
+				<div className="google">
+					sanket@digio.in uses Gmail?
+					<br/>
+					login using google
+					<br/>
+					<button> g+ Google</button>
+				</div>
 				<div className="login-form">
 					<form className="demoForm">
 						<div className="form-group">
