@@ -81,6 +81,8 @@ class Modal extends Component {
 						Verify
 					</div>
 					<br/>
+					<input type="checkbox"/> I agree to eSign this <u>KYC document</u> to get started
+					<br/>
 					<br/>
 					<NumberFormat format="######" onChange={(event) => this.otpInput(event)} />
 					
