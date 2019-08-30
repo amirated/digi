@@ -4,6 +4,8 @@ body {
 }
 
 .login-page {
+	text-align: center;
+
 	.top-bar {
 		background-image: linear-gradient(#1696d8, #0d62b6);
 		height: 60px;
@@ -31,6 +33,32 @@ body {
 			}
 		}
 	}
+
+	.login-form {
+		padding: 0 5%;
+		form {
+			text-align: center;
+			.nav-item {
+				width: 300px;
+				height: 50px;
+				background: #0c5eb3;
+				color: white;
+				text-align: center;
+				.nav-link {
+					width: 100%;
+					height: 100%;
+				}
+				&.inactive {
+					pointer-events: none; 
+    				cursor: not-allowed; 
+				}
+				&.active {
+					cursor: pointer;
+				}
+			}
+		}
+
+	}
 }
 
 .modal-container {
@@ -40,10 +68,24 @@ body {
 	top: 0;
 	z-index: 1;
 	background-color: rgba(0,0,0,0.4);
+	text-align: center;
 	.modal-body {
 		width: 500px;
 		height: 200px;
 		background: white;
+		.verify {
+			width: 120px;
+			height: 50px;
+			background: orange;
+			&.inactive {
+				pointer-events: none; 
+				cursor: not-allowed; 
+			}
+			&.active {
+
+			}
+		}
+		
 	}
 }
 

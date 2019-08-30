@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+// import Form from './Form.js';
+
 import logo from '../images/generic-logo-hi.png';
 
 class Login extends Component {
@@ -8,7 +10,9 @@ class Login extends Component {
 	    super(props);
 	    this.state = {
 			error: null,
-			isLoaded: false
+			isLoaded: false,
+			email: '',
+			emailValid: false
 	    }
 	}
 
@@ -17,6 +21,31 @@ class Login extends Component {
 		// this.fetchSchedule();
 		// dispatch({ type: AGENT_LIST_FETCHED })
 	}
+
+	// emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+
+	handleUserInput (e) {
+		const name = e.target.name;
+		const value = e.target.value;
+		this.setState({[name]: value});
+		this.checkValidation();
+
+		// console.log(this.state.emailValid)
+	}
+
+	checkValidation() {
+		var email = this.state.email;
+		// var emailValid = email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+		var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    	var emailValid = re.test(String(email).toLowerCase());
+		this.setState({
+			emailValid: emailValid
+		})
+	}
+
+	// changePage() {
+	// 	this.props.history.push('/page');
+	// }
 
 	render () {
 		return (
@@ -35,11 +64,18 @@ class Login extends Component {
 					</div>
 				</div>
 				<div className="login-form">
-					<div className="nav-item">
-						<Link to="/page" className="nav-link">
-							CONTINUE
-						</Link>
-					</div>
+					<form className="demoForm">
+						<div className="form-group">
+							<label htmlFor="email">Email address</label>
+							<input type="email" className={this.state.emailValid ? "form-control is-valid" : "form-control is-valid"} name="email" onChange={(event) => this.handleUserInput(event)} />
+						</div>
+						<div className={this.state.emailValid ? "nav-item active" : "nav-item inactive"}>
+							<Link to="/page" className="nav-link">
+								CONTINUE
+							</Link>
+						</div>
+					</form>
+					
 				</div>
 			</div>
 		)
